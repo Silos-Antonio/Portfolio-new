@@ -675,10 +675,44 @@ h1 > span {
   .hero {
     grid-template-columns: 1fr;
     gap: 32px;
+    position: relative;
   }
+  .hero-content {
+    padding-right: 110px;
+  }
+
   .portrait {
+    display: block;
+    position: absolute;
+
+    top: 38px;
+    right: 26px;
+
+    width: 84px;
+    height: 84px;
+
+    margin: 0;
+    margin-right: 20px;
+    border-radius: 100px;
+    overflow: hidden;
+
+    box-shadow:
+      0 2px 4px rgba(15, 35, 48, 0.08),
+      0 10px 28px rgba(15, 35, 48, 0.16);
+  }
+
+  .portrait img {
+    display: block;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+  }
+
+  /* A legenda usada no desktop provavelmente não precisa aparecer */
+  .portrait figcaption {
     display: none;
   }
+}
   .hero-statement {
     max-width: 34ch;
   }
@@ -725,7 +759,7 @@ h1 > span {
   .education-section {
     padding-bottom: 64px;
   }
-}
+
 @media (max-width: 430px) {
   .brand {
     font-size: 1.05rem;
@@ -743,6 +777,19 @@ h1 > span {
   .stack-grid,
   .feature-grid {
     grid-template-columns: 1fr;
+  }
+    .portrait {
+    top: 34px;
+    right: 20px;
+
+    width: 68px;
+    height: 68px;
+
+    border-radius: 100px;
+
+    box-shadow:
+      0 2px 4px rgba(15, 35, 48, 0.08),
+      0 8px 20px rgba(15, 35, 48, 0.14);
   }
   .architecture-flow li {
     padding: 18px;

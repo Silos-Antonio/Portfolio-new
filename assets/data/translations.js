@@ -105,7 +105,7 @@ const portfolioTranslations = {
     "learning": "Desafios & aprendizados",
     "learningBody": "O desafio técnico é manter coerência entre usuário, dados e estado da sessão. O projeto evidencia três aprendizados: autorização precisa acompanhar o estado atual da conta; integridade não deve depender só da interface; e um estado que precisa sobreviver a recarregamentos deve ser persistido.",
     "statusTitle": "Concluído no escopo atual. Aberto à evolução.",
-    "statusBody": "O Equilibrium permanece ativo como projeto de portfólio. O roadmap documenta possíveis melhorias, como autenticação de dois fatores para administradores, logging e maior cobertura de testes. São evoluções futuras, não funcionalidades entregues.",
+    "statusBody": "O Equilibrium permanece ativo como projeto de portfólio. O roadmap está possíveis melhorias, como autenticação de dois fatores para administradores, logging e maior cobertura de testes. São evoluções futuras, que pretendo implementar em breve.",
     "noDemo": "Sem demonstração pública disponível no momento.",
     "caseNav": "Navegação do case"
   },
