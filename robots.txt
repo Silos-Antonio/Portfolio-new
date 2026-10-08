@@ -1,0 +1,6 @@
+User-agent: *
+Allow: /
+Disallow: /docs/
+Disallow: /.validation/
+Disallow: /tests/
+Sitemap: https://antoniosnportifolio.netlify.app/sitemap.xml

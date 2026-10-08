@@ -1,0 +1,16 @@
+{
+  "name": "antonio-silos-portfolio",
+  "version": "2.0.0",
+  "private": true,
+  "description": "Static HTML, CSS and JavaScript portfolio. Node dependencies are only used for validation.",
+  "scripts": {
+    "check:static": "python tests/validate.py",
+    "check:html": "node tests/html.cjs",
+    "test": "node tests/browser.cjs"
+  },
+  "devDependencies": {
+    "axe-core": "4.14.0",
+    "html-validate": "10.9.0",
+    "playwright": "1.62.1"
+  }
+}

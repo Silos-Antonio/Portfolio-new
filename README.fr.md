@@ -1,102 +1,60 @@
-# 🌐 Portfolio Personnel — Antonio Silos
-🇫🇷 [Français] | 🇧🇷 [Português](README.md)
-## 📌 À propos du projet
+# Portfolio V2.0 — Antonio Silos
 
-Ce projet représente mon portfolio personnel, développé avec un souci particulier de structure, performance et respect des bonnes pratiques du développement front-end.
+[Português](README.md) · Français · [English](README.en.md)
 
-Au-delà d’une simple vitrine de projets, ce site reflète mon évolution professionnelle en tant que développeur et mon engagement envers un code propre, une structure sémantique claire et une expérience utilisateur soignée.
+Portfolio d’un développeur logiciel axé sur Python, le backend et les applications web, avec une expérience du support technique, des systèmes de gestion, de SQL et des API. La V2 fait évoluer la V1 en conservant HTML, CSS et JavaScript natif.
 
-L’objectif principal est de proposer une interface moderne, responsive et professionnelle pour présenter :
+## Exécution locale
 
-- Mes projets
-- Mes compétences techniques
-- Mon parcours
-- Mes informations de contact
+Aucune compilation ni dépendance de production :
 
----
-
-## 🚀 Technologies utilisées
-
-- **HTML5** → Structure sémantique et accessibilité
-- **CSS3** → Mise en page moderne et design responsive
-- **JavaScript** → Interactions et dynamisme de l’interface
-
----
-
-## 🎯 Concepts techniques appliqués
-
-✔️ HTML sémantique  
-✔️ Approche responsive (Mobile First)  
-✔️ Utilisation de Flexbox pour la mise en page  
-✔️ Séparation claire des responsabilités (HTML / CSS / JS)  
-✔️ Organisation propre et maintenable du code  
-✔️ Principes fondamentaux d’expérience utilisateur (UX)
-
----
-
-## 📱 Responsive Design
-
-L’interface a été conçue pour s’adapter à différents formats d’écran :
-
-- 📱 Mobile
-- 💻 Ordinateur portable
-- 🖥️ Grand écran
-
-La responsivité a été mise en œuvre à l’aide de media queries et des bonnes pratiques CSS modernes.
-
----
-
-## 🌍 Version en ligne
-
-Le projet est accessible à l’adresse suivante :
-
-🔗 https://antoniosnportifolio.netlify.app/
-
----
-
-## 📂 Structure du projet
-
-```bash
-📁 PORTFOLIO
-│
-├── assets/
-│   ├── css/
-│   │   └── style.css
-│   ├── images/
-│   └── js/
-│
-├── google450156a250680164.html
-├── index.html
-├── LICENSE
-└── README.md
+```sh
+python -m http.server 4173 --bind 127.0.0.1
 ```
 
----
+Ouvrez [le site local](http://127.0.0.1:4173/?lang=fr). Le fichier `index.html` peut aussi être ouvert directement ; un serveur local reproduit mieux l’hébergement statique.
 
-## 🔄 État du projet
+## Architecture
 
-✅ Projet finalisé  
-🔄 En amélioration continue  
+- `index.html` : présentation, projets, expérience, parcours, technologies, formation et contact.
+- `projects/equilibrium.html` : étude de cas avec architecture, sécurité, tests, choix techniques et statut.
+- `assets/css/style.css` : système visuel, mise en page adaptative et focus clavier.
+- `assets/data/translations.js` : textes PT/FR/EN.
+- `assets/js/i18n.js` : langue, attributs accessibles et métadonnées.
+- `assets/js/main.js` : menu mobile et gestion du focus.
+- `assets/images/` : captures réelles optimisées, portrait, favicon et sources conservées.
+- `tests/` et `docs/` : validations, audit et rapport.
 
-Ce portfolio évolue régulièrement afin d’intégrer de nouveaux projets et de refléter le développement progressif de mes compétences.
+Equilibrium est le projet principal, suivi de la classification de profils de crédit et d’une page pour une thérapeute. Tout le contenu en portugais est présent dans le HTML, accessible sans JavaScript. Aucun framework, CDN, police distante ou bibliothèque d’icônes n’est chargé par le site.
 
----
+## Internationalisation
 
-## 💡 Objectif professionnel
+Priorité : paramètre `?lang=pt|fr|en` valide → préférence `portfolio-language` → première langue du navigateur prise en charge → portugais. Les liens entre les pages conservent la langue, même si le stockage est indisponible.
 
-Ce projet marque une étape importante dans mon parcours vers le développement web professionnel.
+Les textes, `html lang`, labels, textes alternatifs, titre, description et Open Graph sont actualisés. Lors d’une modification, conservez les mêmes clés dans les trois dictionnaires et synchronisez le contenu portugais du HTML. Les captures des projets gardent la langue de leur interface.
 
-Je poursuis actuellement mon évolution dans les domaines suivants :
+Les URL canoniques sont statiques. Les robots sociaux sans JavaScript reçoivent les métadonnées portugaises ; les traductions dynamiques ne sont pas des pages générées côté serveur.
 
-- Développement Front-End
-- Data & Intelligence Artificielle
-- Conception de solutions numériques orientées valeur
+## Vérification
 
----
+Node n’est nécessaire que pour les outils de développement :
 
-## 👨‍💻 Auteur
+```sh
+python tests/validate.py
+npm ci
+npx playwright install chromium
+npm run check:html
+npm test
+```
 
-**Antonio Silos**
+Pour utiliser Chrome déjà installé, définissez `BROWSER_CHANNEL=chrome` (PowerShell : `$env:BROWSER_CHANNEL='chrome'`). Les tests couvrent les deux pages, trois langues, cinq largeurs, axe, le clavier, la navigation, le stockage bloqué et le fonctionnement sans JavaScript. Les résultats sont écrits dans `.validation/`, ignoré par Git.
 
-🔗 LinkedIn : https://linkedin.com/in/antonio-silos-415b64175  
-🔗 GitHub : https://github.com/Silos-Antonio
+## Hébergement et sources
+
+Hébergement statique compatible avec Netlify : aucune commande de build, publication depuis la racine. [Domaine existant](https://antoniosnportifolio.netlify.app/). La V2 est locale et n’a pas été déployée. En cas de changement de domaine, adaptez les canonical, Open Graph, robots et sitemap. Conservez la vérification Google. Excluez les outils de test, documents internes et sauvegardes du contenu publié.
+
+Le positionnement suit `PORTFOLIO_V2_CONTEXT.md`. L’étude d’Equilibrium repose sur son code et sa documentation locale, sans modification du projet source. Son [dépôt public](https://github.com/Silos-Antonio/Projeto-Equilibrium) a été confirmé lors de la vérification finale et figure sur les deux pages. Aucune démonstration publique n’est confirmée. Un CV téléchargeable reste à fournir. Voir [le rapport](docs/RELATORIO_V2.md) et [l’audit](docs/AUDITORIA_V2.md), en portugais.
+
+[GitHub](https://github.com/Silos-Antonio) · [Dépôt du portfolio](https://github.com/Silos-Antonio/Portfolio) · [LinkedIn](https://www.linkedin.com/in/antonio-silos-415b64175) · [E-mail](mailto:antonio.silos95@outlook.com)
+
+Code sous [licence MIT](LICENSE).

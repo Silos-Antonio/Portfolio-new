@@ -1,0 +1,417 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+  <head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Equilibrium — Case técnico | Antonio Silos</title>
+    <meta
+      name="description"
+      content="Case do Equilibrium: aplicação Flask e MySQL para pacientes, agendamentos e sessões remotas, com autorização no servidor e testes automatizados.">
+    <meta name="theme-color" content="#172630">
+    <link
+      rel="canonical"
+      href="https://antoniosnportifolio.netlify.app/projects/equilibrium.html">
+    <meta property="og:type" content="website">
+    <meta
+      property="og:title"
+      content="Equilibrium — Case técnico | Antonio Silos">
+    <meta
+      property="og:description"
+      content="Case do Equilibrium: aplicação Flask e MySQL para pacientes, agendamentos e sessões remotas, com autorização no servidor e testes automatizados.">
+    <meta
+      property="og:url"
+      content="https://antoniosnportifolio.netlify.app/projects/equilibrium.html">
+    <meta property="og:locale" content="pt_BR">
+    <meta property="og:site_name" content="Antonio Silos">
+    <meta
+      property="og:image"
+      content="https://antoniosnportifolio.netlify.app/assets/images/social-preview.jpg">
+    <meta property="og:image:width" content="1200">
+    <meta property="og:image:height" content="630">
+    <meta
+      property="og:image:alt"
+      content="Antonio Silos · Python · Backend · Web">
+    <meta name="twitter:card" content="summary_large_image">
+    <link rel="icon" href="../assets/images/favicon_64.ico" sizes="64x64">
+    <link rel="stylesheet" href="../assets/css/style.css">
+    <script src="../assets/data/translations.js" defer></script>
+    <script src="../assets/js/i18n.js" defer></script>
+    <script src="../assets/js/main.js" defer></script>
+  </head>
+  <body data-page="case" id="top">
+    <a data-i18n="skip" href="#main" class="skip-link">Pular para o conteúdo</a>
+    <header class="site-header">
+      <div class="wrap header-inner">
+        <a class="brand" href="../index.html" data-local-link
+          >Antonio Silos<span aria-hidden="true">.</span></a
+        >
+        <button
+          class="menu-toggle"
+          type="button"
+          aria-expanded="false"
+          aria-controls="main-nav"
+          hidden
+        >
+          <span data-i18n="menu">Menu</span> <span aria-hidden="true">☰</span>
+        </button>
+        <nav
+          id="main-nav"
+          data-i18n-aria="navigation"
+          aria-label="Navegação principal"
+        >
+          <a data-i18n="projects" href="../index.html#projetos" data-local-link
+            >Projetos</a
+          ><a
+            data-i18n="experience"
+            href="../index.html#experiencia"
+            data-local-link
+            >Experiência</a
+          ><a data-i18n="about" href="../index.html#sobre" data-local-link
+            >Sobre</a
+          ><a data-i18n="contact" href="../index.html#contato" data-local-link
+            >Contato</a
+          >
+        </nav>
+        <div
+          class="language-switch"
+          role="group"
+          data-i18n-aria="language"
+          aria-label="Idioma"
+          hidden
+        >
+          <button
+            type="button"
+            data-lang="pt"
+            lang="pt-BR"
+            aria-label="Português"
+            aria-pressed="true"
+          >
+            PT
+          </button>
+          <button
+            type="button"
+            data-lang="fr"
+            lang="fr"
+            aria-label="Français"
+            aria-pressed="false"
+          >
+            FR
+          </button>
+          <button
+            type="button"
+            data-lang="en"
+            lang="en"
+            aria-label="English"
+            aria-pressed="false"
+          >
+            EN
+          </button>
+        </div>
+      </div>
+    </header>
+    <main id="main" tabindex="-1">
+      <section class="case-hero wrap" aria-labelledby="case-title">
+        <a
+          data-i18n="backProjects"
+          href="../index.html#projetos"
+          class="text-link back-link"
+          data-local-link
+          >Voltar aos projetos</a
+        >
+        <p data-i18n="caseKicker" class="eyebrow">
+          Case técnico / Aplicação web
+        </p>
+        <h1 id="case-title">Equilibrium<span aria-hidden="true">.</span></h1>
+        <p data-i18n="eqDescription" class="case-lead">
+          Aplicação web multiusuário para gestão de pacientes, agendamentos e
+          sessões de terapia à distância.
+        </p>
+        <p class="tech-list">Python · Flask · MySQL · JavaScript</p>
+        <p data-i18n="status" class="status">
+          Escopo atual finalizado · Projeto de portfólio ativo
+        </p>
+<div class="actions"><a data-i18n="code" href="https://github.com/Silos-Antonio/Projeto-Equilibrium" class="text-link">Ver código no GitHub</a></div>
+        <figure class="project-image">
+          <img
+            src="../assets/images/projects/equilibrium-dashboard.webp"
+            width="1365"
+            height="641"
+            loading="lazy"
+            decoding="async"
+            data-i18n-alt="eqAlt"
+            alt="Dashboard real do Equilibrium com visão geral de pacientes e agendamentos.">
+          <figcaption data-i18n="eqCaption">
+            Interface do Equilibrium · visão geral do terapeuta
+          </figcaption>
+        </figure>
+      </section>
+      <nav
+        class="case-nav wrap"
+        data-i18n-aria="caseNav"
+        aria-label="Navegação do case"
+      >
+        <a data-i18n="overview" href="#visao-geral">Visão geral</a
+        ><a data-i18n="architecture" href="#arquitetura">Arquitetura</a
+        ><a data-i18n="security" href="#seguranca">Segurança</a
+        ><a data-i18n="testing" href="#testes">Testes</a
+        ><a data-i18n="learning" href="#aprendizados"
+          >Desafios &amp; aprendizados</a
+        >
+      </nav>
+      <section
+        class="section wrap case-split"
+        id="visao-geral"
+        aria-labelledby="overview-title"
+      >
+        <div>
+          <p class="eyebrow">
+            <span aria-hidden="true">01 — </span
+            ><span data-i18n="overview">Visão geral</span>
+          </p>
+          <h2 data-i18n="problem" id="overview-title">O contexto</h2>
+        </div>
+        <div>
+          <p data-i18n="problemBody">
+            A rotina de um terapeuta envolve pacientes, horários e a preparação
+            de cada sessão. O Equilibrium reúne essas atividades em uma
+            aplicação, com acesso individual para terapeutas e administração de
+            contas. O objetivo é organizar o trabalho sem misturar as carteiras
+            de pacientes.
+          </p>
+          <h3 data-i18n="contribution">Minha contribuição</h3>
+          <p data-i18n="contributionBody">
+            Desenvolvimento da aplicação web: rotas Flask, serviços de negócio,
+            persistência em MySQL, templates Jinja2 e interações em JavaScript,
+            com controles de acesso e testes nas áreas críticas.
+          </p>
+        </div>
+      </section>
+      <section class="case-features section">
+        <div class="wrap">
+          <h2 data-i18n="features">Da gestão ao início da sessão</h2>
+          <div class="feature-grid">
+            <article>
+              <h3 data-i18n="patientsTitle">Pacientes por terapeuta</h3>
+              <p data-i18n="patientsBody">
+                Cadastro, edição e consulta paginada. Os registros são filtrados
+                por terapeuta_id; o telefone é normalizado e, quando informado,
+                único dentro de cada carteira.
+              </p>
+            </article>
+            <article>
+              <h3 data-i18n="appointmentsTitle">Agenda e histórico</h3>
+              <p data-i18n="appointmentsBody">
+                Agendamentos com duração configurável e seleção de música,
+                edição de horário, cancelamento e histórico paginado. O
+                dashboard reúne indicadores e informações recentes.
+              </p>
+            </article>
+            <article>
+              <h3 data-i18n="sessionTitle">Continuidade da sessão</h3>
+              <p data-i18n="sessionBody">
+                Cada sessão tem um token de acesso exclusivo. O cronômetro usa
+                timestamps registrados no servidor para manter o estado após
+                recarregar a página, com encerramento automático e controles de
+                áudio.
+              </p>
+            </article>
+            <article>
+              <h3 data-i18n="adminTitle">Administração de contas</h3>
+              <p data-i18n="adminBody">
+                Perfis ADMIN e TERAPEUTA, ativação e desativação de contas,
+                redefinição de senhas e comando CLI para criar o primeiro
+                administrador.
+              </p>
+            </article>
+          </div>
+        </div>
+      </section>
+      <section
+        class="section wrap"
+        id="arquitetura"
+        aria-labelledby="architecture-title"
+      >
+        <p class="eyebrow">
+          <span aria-hidden="true">02 — </span
+          ><span data-i18n="architecture">Arquitetura</span>
+        </p>
+        <h2 data-i18n="architectureTitle" id="architecture-title">
+          Separação clara, estrutura enxuta.
+        </h2>
+        <p data-i18n="architectureBody" class="measure">
+          As rotas HTTP recebem as requisições; a camada de serviços concentra
+          regras de negócio e acesso ao MySQL. Templates Jinja2 e arquivos
+          estáticos ficam separados. Essa estrutura mantém o fluxo legível sem
+          adicionar camadas que o escopo atual não exige.
+        </p>
+        <ol class="architecture-flow">
+          <li>
+            <span data-i18n="browser">Navegador</span
+            ><small>HTML · CSS · JavaScript</small>
+          </li>
+          <li>
+            <span data-i18n="routes">Rotas Flask</span
+            ><small>HTTP · Jinja2</small>
+          </li>
+          <li>
+            <span data-i18n="services">Serviços</span><small>Python</small>
+          </li>
+          <li>MySQL<small>mysql-connector-python</small></li>
+        </ol>
+        <h3 data-i18n="decisions" class="subheading">Decisões técnicas</h3>
+        <div class="decision-list">
+          <article>
+            <span class="decision-number" aria-hidden="true">01</span>
+            <div>
+              <h4 data-i18n="decision1Title">O banco define o acesso atual</h4>
+              <p data-i18n="decision1">
+                A sessão identifica o usuário, mas perfil e status são
+                consultados no banco a cada requisição protegida. Dados antigos
+                da sessão não mantêm permissões após uma desativação.
+              </p>
+            </div>
+          </article>
+          <article>
+            <span class="decision-number" aria-hidden="true">02</span>
+            <div>
+              <h4 data-i18n="decision2Title">Integridade perto dos dados</h4>
+              <p data-i18n="decision2">
+                A normalização de telefones evita formatos diferentes para o
+                mesmo valor. A unicidade por terapeuta é aplicada no banco; os
+                serviços traduzem erros de integridade em mensagens para o
+                usuário.
+              </p>
+            </div>
+          </article>
+          <article>
+            <span class="decision-number" aria-hidden="true">03</span>
+            <div>
+              <h4 data-i18n="decision3Title">
+                Tempo persistido, não reiniciado
+              </h4>
+              <p data-i18n="decision3">
+                O início da sessão é registrado uma única vez. Ao recarregar a
+                interface, o tempo restante é recalculado a partir dos
+                timestamps, em vez de iniciar uma nova contagem.
+              </p>
+            </div>
+          </article>
+        </div>
+      </section>
+      <section
+        class="security-section section"
+        id="seguranca"
+        aria-labelledby="security-title"
+      >
+        <div class="wrap case-split">
+          <div>
+            <p class="eyebrow">
+              <span aria-hidden="true">03 — </span
+              ><span data-i18n="security">Segurança</span>
+            </p>
+            <h2 data-i18n="securityTitle" id="security-title">
+              Controles concretos em cada acesso.
+            </h2>
+          </div>
+          <ul class="prose-list">
+            <li data-i18n="security1">
+              Senhas com bcrypt; proteção CSRF nos formulários e rate limiting
+              no login.
+            </li>
+            <li data-i18n="security2">
+              Queries SQL parametrizadas, autorização no servidor e isolamento
+              dos dados por terapeuta.
+            </li>
+            <li data-i18n="security3">
+              Credenciais em variáveis de ambiente, mensagens genéricas de falha
+              na autenticação e tokens gerados com secrets.token_urlsafe.
+            </li>
+          </ul>
+        </div>
+      </section>
+      <section
+        class="section wrap case-split"
+        id="testes"
+        aria-labelledby="testing-title"
+      >
+        <div>
+          <p class="eyebrow">
+            <span aria-hidden="true">04 — </span
+            ><span data-i18n="testing">Testes</span>
+          </p>
+          <h2 data-i18n="testingTitle" id="testing-title">
+            Verificar as regras que protegem o acesso.
+          </h2>
+        </div>
+        <div>
+          <p data-i18n="testingBody">
+            A suíte usa pytest, Flask test client, mocks e monkeypatching. Os
+            cenários existentes verificam credenciais válidas e inválidas,
+            contas inativas, falha de conexão, rotas protegidas, permissões
+            atuais e criação do primeiro administrador. Os mocks permitem testar
+            essas regras sem uma instância real de MySQL.
+          </p>
+          <p data-i18n="testingLimit" class="note">
+            Esses testes se concentram em autenticação, autorização e CLI; não
+            representam cobertura completa de todos os fluxos.
+          </p>
+          <p class="tech-list">
+            pytest · Flask test client · mocks · monkeypatch
+          </p>
+        </div>
+      </section>
+      <section
+        class="section wrap case-split learning-section"
+        id="aprendizados"
+        aria-labelledby="learning-title"
+      >
+        <div>
+          <p class="eyebrow">
+            <span aria-hidden="true">05 — </span
+            ><span data-i18n="learning">Desafios &amp; aprendizados</span>
+          </p>
+          <h2 data-i18n="learning" id="learning-title">
+            Desafios &amp; aprendizados
+          </h2>
+        </div>
+        <p data-i18n="learningBody">
+          O desafio técnico é manter coerência entre usuário, dados e estado da
+          sessão. O projeto evidencia três aprendizados: autorização precisa
+          acompanhar o estado atual da conta; integridade não deve depender só
+          da interface; e um estado que precisa sobreviver a recarregamentos
+          deve ser persistido.
+        </p>
+      </section>
+      <section class="contact-section">
+        <div class="wrap">
+          <h2 data-i18n="statusTitle">
+            Concluído no escopo atual. Aberto à evolução.
+          </h2>
+          <p data-i18n="statusBody" class="measure">
+            O Equilibrium permanece ativo como projeto de portfólio. O roadmap
+            contém possíveis melhorias, como autenticação de dois fatores
+            para administradores, logging e maior cobertura de testes. São
+            evoluções futuras, que pretendo implementar muito em breve.
+          </p>
+          <p data-i18n="noDemo" class="note">
+            Sem demonstração pública disponível no momento.
+          </p>
+          <div class="actions">
+            <a
+              data-i18n="backProjects"
+              href="../index.html#projetos"
+              class="button light"
+              data-local-link
+              >Voltar aos projetos</a
+            >
+          </div>
+        </div>
+      </section>
+    </main>
+    <footer class="site-footer wrap">
+      <p>© 2026 Antonio Silos</p>
+      <p data-i18n="footerNote">Feito com HTML, CSS e JavaScript.</p>
+      <a data-i18n="backTop" href="#top">Voltar ao topo</a>
+    </footer>
+  </body>
+</html>
